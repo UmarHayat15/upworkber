@@ -1,0 +1,305 @@
+[
+  {
+    "acquisition_id": 1,
+    "id": 1,
+    "brand": "Canon",
+    "model": "RF 70-200mm f/2.8L IS USM Zoom Lens with Lens Hood and Case",
+    "product_category": "Lens",
+    "list_price": 2000,
+    "ebay fee": 300.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 4.0,
+    "est_dim_len": 10.0,
+    "est_dim_width": 6,
+    "est_dim_height": 6,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/001/IMG_5509.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/001/IMG_5512.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/001/IMG_5513.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/001/IMG_5514.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/001/oMCuk.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 2,
+    "brand": "Canon",
+    "model": "EF 16-35mm f/2.8L USM Zoom Lens with Lens Hood",
+    "product_category": "Lens",
+    "list_price": 400,
+    "ebay fee": 60.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.7,
+    "est_dim_len": 6.5,
+    "est_dim_width": 5,
+    "est_dim_height": 5,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/002/IMG_5518.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/002/IMG_5519.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/002/IMG_5520.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 3,
+    "brand": "Canon",
+    "model": "EF 100-400mm f/4.5-5.6L IS USM Zoom Lens with Lens Hood and case",
+    "product_category": "Lens",
+    "list_price": 550,
+    "ebay fee": 82.5,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 4.0,
+    "est_dim_len": 10.0,
+    "est_dim_width": 6,
+    "est_dim_height": 6,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/003/IMG_5517.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/003/YbSJ3.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 4,
+    "brand": "Canon",
+    "model": "EF 24-70mm f/2.8L USM Macro Lens with Lens Hood",
+    "product_category": "Lens",
+    "list_price": 600,
+    "ebay fee": 90.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 2.1,
+    "est_dim_len": 6.0,
+    "est_dim_width": 5,
+    "est_dim_height": 5,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/004/IMG_5521.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/004/IMG_5523.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 5,
+    "brand": "Canon",
+    "model": "Compact Macro Lens EF 50mm f/2.5",
+    "product_category": "Lens",
+    "list_price": 100,
+    "ebay fee": 15.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 4.0,
+    "est_dim_width": 3,
+    "est_dim_height": 3,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/005/IMG_5524.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/005/IMG_5525.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 6,
+    "brand": "Canon ",
+    "model": "Life-Size Converter EF",
+    "product_category": "Lens",
+    "list_price": 80,
+    "ebay fee": 12.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 3.0,
+    "est_dim_width": 3,
+    "est_dim_height": 3,
+
+    "images": [
+
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/006/IMG_5526.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/006/IMG_5527.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/006/IMG_5528.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 7,
+    "brand": "Canon",
+    "model": "Macro Twin Lite MT24-EX with case",
+    "product_category": "Lighting",
+    "list_price": 250,
+    "ebay fee": 37.5,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 2.0,
+    "est_dim_len": 9.0,
+    "est_dim_width": 7,
+    "est_dim_height": 6,
+
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/007/IMG_5506.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/007/IMG_5508.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 8,
+    "brand": "Canon",
+    "model": "EOS 5D Mark II with Multi Battery Grip",
+    "product_category": "Camera Body",
+    "list_price": 300,
+    "ebay fee": 45.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 3.0,
+    "est_dim_len": 8.0,
+    "est_dim_width": 8,
+    "est_dim_height": 6,
+
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/008/IMG_5529.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/008/IMG_5531.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/008/IMG_5532.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/008/IMG_5533.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 10,
+    "brand": "Canon",
+    "model": "Speedlite 580EX II with case",
+    "product_category": "Flash",
+    "list_price": 75,
+    "ebay fee": 11.25,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.1,
+    "est_dim_len": 9.0,
+    "est_dim_width": 4,
+    "est_dim_height": 4,
+
+    "images": [
+
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/010/IMG_5534.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/010/IMG_5535.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/010/IMG_5536.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/010/IMG_5538.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 11,
+    "brand": "Canon",
+    "model": "SpeedLite I",
+    "product_category": "Flash",
+    "list_price": 40,
+    "ebay fee": 6.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 9.0,
+    "est_dim_width": 4,
+    "est_dim_height": 4,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/011/IMG_5539.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/011/IMG_5541.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 12,
+    "brand": "Canon",
+    "model": "Speedlite I",
+    "product_category": "Flash",
+    "list_price": 40,
+    "ebay fee": 6.0,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 9.0,
+    "est_dim_width": 4,
+    "est_dim_height": 4,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/012/IMG_5542.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/012/IMG_5543.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 13,
+    "brand": "Canon",
+    "model": "EF Adapter XL with Case",
+    "product_category": "Accessory",
+    "list_price": 75,
+    "ebay fee": 11.25,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 5.0,
+    "est_dim_width": 5,
+    "est_dim_height": 3,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/013/FmKSC.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/013/JbprS.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/013/SKPSy.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 15,
+    "brand": "Canon",
+    "model": "LC-E6 Battery Charger",
+    "product_category": "Accessory",
+    "list_price": 35,
+    "ebay fee": 5.25,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 1.0,
+    "est_dim_len": 4.0,
+    "est_dim_width": 3,
+    "est_dim_height": 2,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/015/IMG_5547.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/015/IMG_5548.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 16,
+    "brand": "Canon",
+    "model": "Angle Finder C w/case",
+    "product_category": "Accessory",
+    "list_price": 35,
+    "ebay fee": 5.25,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 0.5,
+    "est_dim_len": 5.0,
+    "est_dim_width": 3,
+    "est_dim_height": 2,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/016/IMG_5550.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/016/IMG_5551.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  },
+  {
+    "acquisition_id": 1,
+    "id": 17,
+    "brand": "Canon",
+    "model": "Speedlite Transmitter ST-E2 with Case",
+    "product_category": "Accessory",
+    "list_price": 30,
+    "ebay fee": 4.5,
+    "est_shipping_cost": null,
+    "est_shipping_weight": 0.5,
+    "est_dim_len": 3.0,
+    "est_dim_width": 2,
+    "est_dim_height": 2,
+    "images": [
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/017/IMG_5552.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/017/IMG_5553.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/017/IMG_5554.jpeg",
+      "https://s3.us-west-2.amazonaws.com/com.lokomoko.images.staging/017/IMG_5555.jpeg"
+    ],
+    "storage_location": "001-001-001-001"
+  }
+]

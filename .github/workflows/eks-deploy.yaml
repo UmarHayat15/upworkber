@@ -1,0 +1,106 @@
+name: Deploy to EKS
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_tag:
+        description: 'Docker image tag to deploy'
+        required: true
+        default: 'latest'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name prod-eks # Make sure 'prod-eks' is your actual cluster name
+      - name: Verify kubectl configuration
+        run: |
+          kubectl config view
+          echo "Attempting to list nodes..."
+          kubectl get nodes
+      - name: Set Docker tag for substitution
+
+        run: echo "DOCKER_TAG=${{ github.event.inputs.docker_tag }}" >> $GITHUB_ENV
+
+      # Optional: Add step to create namespace
+      # - name: Create Namespace if not exists
+      #   run: kubectl create namespace pricing-service --dry-run=client -o yaml | kubectl apply -f -
+
+      - name: Substitute Docker tag and apply Kubernetes manifests
+        env:
+           DOCKER_TAG: ${{ env.DOCKER_TAG }}
+        run: |
+          echo "Applying deployment with image tag: ${DOCKER_TAG}"
+          # Check if files exist before applying
+          if [ ! -f deploy/basic/deployment.yaml ]; then echo "deployment.yaml not found!"; exit 1; fi
+          if [ ! -f deploy/basic/service.yaml ]; then echo "service.yaml not found!"; exit 1; fi
+
+          # Substitute tag in deployment.yaml and apply it
+          # Add -n <namespace> if using namespaces
+          envsubst < deploy/basic/deployment.yaml | kubectl apply -f -
+
+          # Apply the service manifest (no substitution needed)
+          # Add -n <namespace> if using namespaces
+          kubectl apply -f deploy/basic/service.yaml
+
+      - name: Wait for deployment rollout and get LoadBalancer URL
+        id: get_url
+        run: |
+          echo "Waiting for deployment rollout to complete..."
+          # Add -n <namespace> if using namespaces
+          kubectl rollout status deployment/my-app --timeout=5m
+
+          echo "Waiting for LoadBalancer external IP/hostname..."
+          # Wait up to 10 minutes (600s) for AWS to provision the ELB and assign an address
+          # Add -n <namespace> if using namespaces
+          # Use the service name defined in service.yaml (my-app-service)
+          LB_ADDRESS=""
+          while [ -z "$LB_ADDRESS" ]; do
+            # Try hostname first (common for ALB/NLB)
+            LB_ADDRESS=$(kubectl get service my-app-service -o jsonpath='{.status.loadBalancer.ingress[0].hostname}' 2>/dev/null)
+            if [ -z "$LB_ADDRESS" ]; then
+              # Fallback to IP (common for Classic LB)
+              LB_ADDRESS=$(kubectl get service my-app-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null)
+            fi
+            if [ -z "$LB_ADDRESS" ]; then
+              echo "LoadBalancer address not available yet, waiting..."
+              sleep 15
+            else
+               echo "LoadBalancer address found: $LB_ADDRESS"
+            fi
+            # Add a timeout check here if needed, although kubectl wait might be better if implemented
+          done
+
+          # Check if service is using NodePort or ClusterIP unexpectedly
+          SERVICE_TYPE=$(kubectl get service my-app-service -o jsonpath='{.spec.type}')
+          if [ "$SERVICE_TYPE" != "LoadBalancer" ]; then
+             echo "Warning: Service type is $SERVICE_TYPE, not LoadBalancer. External URL may not be available."
+          fi
+
+          # Set the output for use in later steps/jobs
+          # Assuming HTTP on port 80. Change to https:// if your LB/app handles TLS.
+          echo "::set-output name=url::http://${LB_ADDRESS}"
+
+      - name: Print Application URL
+        run: |
+          echo "Application should be accessible at: ${{ steps.get_url.outputs.url }}"
+          echo "Note: It might take a few extra minutes for the Load Balancer and DNS (if applicable) to become fully active."

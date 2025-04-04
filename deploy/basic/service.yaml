@@ -1,0 +1,14 @@
+# deploy/basic/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  # namespace: pricing-service
+spec:
+  selector:
+    app: my-app      # Must match the 'app' label in your Deployment's pod template
+  ports:
+    - protocol: TCP
+      port: 80       # Port the Load Balancer will listen on
+      targetPort: 80 # Port your container listens on (must match containerPort in deployment.yaml)
+  type: LoadBalancer # Key setting: Tells EKS to provision an AWS Load Balancer

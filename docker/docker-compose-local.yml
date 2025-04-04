@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:15.2
+    container_name: postgres15
+    hostname: postgresdb
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    restart: always
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    networks:
+      - db-net
+  liquibase:
+    depends_on:
+      - postgres
+    image: liquibase/liquibase:4.19
+    container_name: liquibase4
+    command: |
+      /liquibase/liquibase update --changelog-file changelogs/dbchangelog.sql --log-level info --url jdbc:postgresql://postgresdb:5432/postgres?user=postgres&password=postgres
+    volumes:
+      - ../src/liquibase:/liquibase/changelogs
+      - ../bin:/liquibase/scripts
+    networks:
+      - db-net
+  nginx:
+    depends_on:
+      - liquibase
+    image: nginx:1.25.0
+    container_name: nginx1
+    hostname: nginx
+    expose:
+      - 80
+    ports:
+      - "7777:80"
+    networks:
+      - db-net
+  proxy:
+    image: tinyindustries/loko-proxy:latest
+    hostname: proxy
+    ports:
+      - "3128:3128"
+    networks:
+      - db-net
+    restart: always
+networks:
+  db-net: { }
