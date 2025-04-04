@@ -66,19 +66,15 @@ jobs:
         id: get_url
         run: |
           echo "Waiting for deployment rollout to complete..."
-          # Add -n <namespace> if using namespaces
-          kubectl rollout status deployment/my-app --timeout=5m
+          kubectl rollout status deployment/my-app-pricing --timeout=5m
 
           echo "Waiting for LoadBalancer external IP/hostname..."
-          # Wait up to 10 minutes (600s) for AWS to provision the ELB and assign an address
-          # Add -n <namespace> if using namespaces
-          # Use the service name defined in service.yaml (my-app-service)
           LB_ADDRESS=""
           while [ -z "$LB_ADDRESS" ]; do
-            # Try hostname first (common for ALB/NLB)
+            
             LB_ADDRESS=$(kubectl get service my-app-service -o jsonpath='{.status.loadBalancer.ingress[0].hostname}' 2>/dev/null)
             if [ -z "$LB_ADDRESS" ]; then
-              # Fallback to IP (common for Classic LB)
+              
               LB_ADDRESS=$(kubectl get service my-app-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}' 2>/dev/null)
             fi
             if [ -z "$LB_ADDRESS" ]; then
@@ -87,17 +83,14 @@ jobs:
             else
                echo "LoadBalancer address found: $LB_ADDRESS"
             fi
-            # Add a timeout check here if needed, although kubectl wait might be better if implemented
+            
           done
 
-          # Check if service is using NodePort or ClusterIP unexpectedly
+          
           SERVICE_TYPE=$(kubectl get service my-app-service -o jsonpath='{.spec.type}')
           if [ "$SERVICE_TYPE" != "LoadBalancer" ]; then
              echo "Warning: Service type is $SERVICE_TYPE, not LoadBalancer. External URL may not be available."
           fi
-
-          # Set the output for use in later steps/jobs
-          # Assuming HTTP on port 80. Change to https:// if your LB/app handles TLS.
           echo "::set-output name=url::http://${LB_ADDRESS}"
 
       - name: Print Application URL
