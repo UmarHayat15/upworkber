@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: umarhayat13/pricing-service:main-11
+        image: umarhayat13/pricing-service:main-12
         command: ["/bin/sh", "-c"]
         args:
           - "pip install aiohttp && python /app/src/main/python/webapp.py"
