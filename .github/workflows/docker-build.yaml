@@ -41,7 +41,7 @@ jobs:
           push: true
           file: docker/Dockerfile
           tags: |
-            tinyindustries/pricing-service:${{env.BRANCH_NAME}}-${{ github.run_number }}
-            tinyindustries/pricing-service:${{env.BRANCH_NAME}}
+            umarhayat13/pricing-service:${{env.BRANCH_NAME}}-${{ github.run_number }}
+            umarhayat13/pricing-service:${{env.BRANCH_NAME}}
             
 
