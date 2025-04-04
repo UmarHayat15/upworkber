@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: tinyindustries/pricing-service:${DOCKER_TAG}
+        image: umarhayat13/pricing-service:${DOCKER_TAG}
         ports:
         - containerPort: 80
         readinessProbe:
