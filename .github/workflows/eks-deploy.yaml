@@ -31,7 +31,7 @@ jobs:
 
       - name: Update kubeconfig
         run: |
-          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name eks-prod # Make sure 'prod-eks' is your actual cluster name
+          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name prod-eks # Make sure 'prod-eks' is your actual cluster name
       - name: Verify kubectl configuration
         run: |
           kubectl config view
